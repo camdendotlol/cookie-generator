@@ -1,7 +1,7 @@
 function cookieGen() {
     
     let ingredients = []
-    let additives = ["chocolate chips", "vanilla extract", "white chocolate chips", "oregano", "lemon juice", "orange juice", "walnuts", "paprika", "red chili flakes", "thymes", "cinnamon", "rice", "beef stock", "lime juice", "honey", "olive oil", "vinegar", "garlic powder", "worcestershire sauce", "canned tuna", "oats", "feta cheese", "mozzarella cheese", "yogurt", "milk", "raisins", "sunflower seeds", "soy sauce", "sesame oil", "yeast", "sprinkles", "maple syrup", "corn syrup", "canned pumpkin", "onion powder", "bowtie pasta", "ranch dressing", "jeotgal", "garum", "honey mustard", "coconut milk", "coconut shavings", "chopped pecans", "confectioners' sugar"]
+    let additives = ["chocolate chips", "vanilla extract", "white chocolate chips", "oregano", "lemon juice", "orange juice", "walnuts", "paprika", "red chili flakes", "thyme", "cinnamon", "rice", "beef stock", "lime juice", "honey", "olive oil", "vinegar", "garlic powder", "worcestershire sauce", "canned tuna", "oats", "feta cheese", "mozzarella cheese", "yogurt", "milk", "raisins", "sunflower seeds", "soy sauce", "sesame oil", "yeast", "sprinkles", "maple syrup", "corn syrup", "canned pumpkin", "onion powder", "bowtie pasta", "ranch dressing", "jeotgal", "garum", "honey mustard", "coconut milk", "coconut shavings", "chopped pecans", "confectioners' sugar"]
     const measurements = ["teaspoon", "tablespoon", "pinch"]
 
     function butterGen(){
