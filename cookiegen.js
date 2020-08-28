@@ -104,8 +104,9 @@ function cookieGen() {
     additivesGen();
 
     const table = document.getElementById("recipe")
+    const tableRef = table.getElementsByTagName('tbody')[0];
     for (i = 0; i < (ingredients.length); i++) {
-        const row = table.insertRow(-1);
+        const row = tableRef.insertRow(-1);
         const cell1 = row.insertCell(0);
         const cell2 = row.insertCell(1);
         cell1.innerHTML = `${ingredients[i][0]}`
