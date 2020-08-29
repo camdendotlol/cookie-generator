@@ -28,6 +28,7 @@ h1{
 
 #init:hover{
     background: green;
+    color: white;
 }
 
 #recipe{
