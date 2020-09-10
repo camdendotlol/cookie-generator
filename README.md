@@ -1,5 +1,7 @@
 # Cookie Generator
 
+https://mythmakerseven.github.io/cookie-generator/
+
 This simple web app generates a random "cookie" recipe using JavaScript's math object.
 
 The first five ingredients (butter, sugar, flour, baking soda, and eggs) are essential cookie ingredients and are thus guaranteed to be in the recipe, although their amounts may be 0.
