@@ -3,6 +3,10 @@
     src: url(Sriracha-Regular.ttf);
 }
 
+#cookie-pic{
+    max-height: 120px;
+}
+
 .container-md{
     margin: 0 auto;
     text-align: center;
@@ -37,5 +41,5 @@ h1{
 }
 
 .extraspace{
-    padding: 50px;
+    padding: 25px;
 }
