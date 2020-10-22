@@ -23,7 +23,7 @@ function cookieGen() {
         let amount = Math.floor(Math.random() * 5)
         const sugarAmount = amount != 1
             ? `${amount} cups`
-            : `${amount} cups`
+            : `${amount} cup`
 
         ingredients.push([sugarAmount, sugarType]);
     }
