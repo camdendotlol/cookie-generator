@@ -43,3 +43,7 @@ h1{
 .extraspace{
     padding: 25px;
 }
+
+#init {
+    display: inline-block
+}

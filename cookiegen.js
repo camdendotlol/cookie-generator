@@ -1,10 +1,10 @@
-function cookieGen() {
-    
+import additives from './additives.js'
+
+const cookieGen = () => {
     let ingredients = []
-    let additives = ["chocolate chips", "vanilla extract", "white chocolate chips", "oregano", "lemon juice", "orange juice", "walnuts", "paprika", "red chili flakes", "thyme", "cinnamon", "rice", "beef stock", "lime juice", "honey", "olive oil", "vinegar", "garlic powder", "worcestershire sauce", "canned tuna", "oats", "feta cheese", "mozzarella cheese", "yogurt", "milk", "raisins", "sunflower seeds", "soy sauce", "sesame oil", "yeast", "sprinkles", "maple syrup", "corn syrup", "canned pumpkin", "onion powder", "bowtie pasta", "ranch dressing", "jeotgal", "garum", "honey mustard", "coconut milk", "coconut shavings", "chopped pecans", "confectioners' sugar", "ground juniper berries", "sriracha"]
     const measurements = ['teaspoon', 'tablespoon', 'pinch']
 
-    function butterGen(){
+    const butterGen = () => {
         const flip = Math.random();
         const butterType = (flip < 0.5 ? 'salted butter' : 'unsalted butter')
 
@@ -16,7 +16,7 @@ function cookieGen() {
         ingredients.push([butterAmount, butterType]);
     }
     
-    function sugarGen(){
+    const sugarGen = () => {
         const flip = Math.random();
         const sugarType = (flip < 0.2 ? 'brown sugar' : 'regular sugar')
 
@@ -28,7 +28,7 @@ function cookieGen() {
         ingredients.push([sugarAmount, sugarType]);
     }
 
-    function flourGen(){
+    const flourGen = () => {
         const amount = Math.floor(Math.random() * 5)
         const flourAmount = amount != 1
             ? `${amount} cups`
@@ -37,7 +37,7 @@ function cookieGen() {
         ingredients.push([flourAmount, 'flour']);
     }
 
-    function bakingSodaGen(){
+    const bakingSodaGen = () => {
         const amount = Math.floor(Math.random() * 2.5)
 
         const bakingSodaAmount = amount != 1
@@ -47,7 +47,7 @@ function cookieGen() {
         ingredients.push([bakingSodaAmount, 'baking soda']);
     }
 
-    function eggsGen(){
+    const eggsGen = () => {
         const amount = Math.floor(Math.random() * 5);
 
         const eggsType = amount != 1
@@ -57,8 +57,8 @@ function cookieGen() {
         ingredients.push([amount, eggsType]);
     }
 
-    function additivesGen(){
-        for (i = 0; i < 5; i++) {
+    const additivesGen = () => {
+        for (let i = 0; i < 5; i++) {
             const additiveIndex = Math.floor(Math.random() * additives.length)
 
             let additiveType = additives[additiveIndex];
@@ -93,7 +93,7 @@ function cookieGen() {
 
     const table = document.getElementById('recipe')
     const tableRef = table.getElementsByTagName('tbody')[0];
-    for (i = 0; i < (ingredients.length); i++) {
+    for (let i = 0; i < (ingredients.length); i++) {
         const row = tableRef.insertRow(-1);
         const cell1 = row.insertCell(0);
         const cell2 = row.insertCell(1);
@@ -106,4 +106,3 @@ function cookieGen() {
 cookieGen();
 
 document.getElementById('init').addEventListener('click', () => location.reload());
-document.getElementById('init').style.display = 'inline-block';
