@@ -106,3 +106,4 @@ const cookieGen = () => {
 cookieGen();
 
 document.getElementById('init').addEventListener('click', () => location.reload());
+document.getElementById('init').style.display = 'inline-block';
