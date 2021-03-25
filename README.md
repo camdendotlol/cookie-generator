@@ -8,4 +8,4 @@ The next five ingredients are randomly selected from a large list. For clarity o
 
 ## Developer Notes
 
-This was one of my earliest JavaScript projects a long time ago. As I continue learning JavaScript, I like to return here occasionally to improve the code. It's short and simple, so refactoring takes just a few minutes and can be a satisfying way to take a breather from larger projects.
+This was one of my earliest projects. As I continue learning JavaScript, I like to return here occasionally to improve the code. It's short and simple, so refactoring takes just a few minutes and can be a satisfying way to take a breather from larger projects. I don't update it super often, so it might not represent my present abilities, but you can look at the commit history to see how my skills have improved over time.
