@@ -1,26 +1,30 @@
-@font-face{
+@font-face {
     font-family: Sriracha;
     src: url(Sriracha-Regular.ttf);
 }
 
-#cookie-pic{
+#cookie-pic {
     max-height: 120px;
 }
 
-.container-md{
+.table * th {
+    width: 50%;
+}
+
+.container-md {
     margin: 0 auto;
     text-align: center;
 }
 
-svg{
+svg { 
     margin-top: 25px;
 }
 
-h1{
+h1 {
     font-family: Sriracha;
 }
 
-#init{
+#init {
     margin-top: 30px;
     padding: 10px 30px;
     border-radius: 20px;
@@ -30,16 +34,16 @@ h1{
     display: none;
 }
 
-#init:hover{
+#init:hover {
     background: green;
     color: white;
 }
 
-#recipe{
+#recipe {
     padding: 10px;
     margin-top: 30px;
 }
 
-.extraspace{
+.extraspace {
     padding: 25px;
 }

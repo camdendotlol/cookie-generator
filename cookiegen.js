@@ -1,5 +1,19 @@
 import additives from './additives.js'
 
+// Makes it easier to reset later
+const initialTableHTML = `
+<table id="recipe" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Amount</th>
+            <th scope="col">Ingredient</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+`
+
 const cookieGen = () => {
     let ingredients = []
     const measurements = ['teaspoon', 'tablespoon', 'pinch']
@@ -9,9 +23,9 @@ const cookieGen = () => {
         const butterType = (flip < 0.5 ? 'salted butter' : 'unsalted butter')
 
         const amount = Math.floor(Math.random() * 10)
-        const butterAmount = amount != 1
-            ? `${amount} tablespoons`
-            : `${amount} tablespoon`
+        const butterAmount = amount === 1
+            ? `${amount} tablespoon`
+            : `${amount} tablespoons`
 
         ingredients.push([butterAmount, butterType]);
     }
@@ -21,18 +35,18 @@ const cookieGen = () => {
         const sugarType = (flip < 0.2 ? 'brown sugar' : 'regular sugar')
 
         let amount = Math.floor(Math.random() * 5)
-        const sugarAmount = amount != 1
-            ? `${amount} cups`
-            : `${amount} cup`
+        const sugarAmount = amount === 1
+            ? `${amount} cup`
+            : `${amount} cups`
 
         ingredients.push([sugarAmount, sugarType]);
     }
 
     const flourGen = () => {
         const amount = Math.floor(Math.random() * 5)
-        const flourAmount = amount != 1
-            ? `${amount} cups`
-            : `${amount} cup`
+        const flourAmount = amount === 1
+            ? `${amount} cup`
+            : `${amount} cups`
 
         ingredients.push([flourAmount, 'flour']);
     }
@@ -40,9 +54,9 @@ const cookieGen = () => {
     const bakingSodaGen = () => {
         const amount = Math.floor(Math.random() * 2.5)
 
-        const bakingSodaAmount = amount != 1
-            ? `${amount} teaspoons`
-            : `${amount} teaspoon`
+        const bakingSodaAmount = amount === 1
+            ? `${amount} teaspoon`
+            : `${amount} teaspoons`
 
         ingredients.push([bakingSodaAmount, 'baking soda']);
     }
@@ -50,19 +64,23 @@ const cookieGen = () => {
     const eggsGen = () => {
         const amount = Math.floor(Math.random() * 5);
 
-        const eggsType = amount != 1
-            ? 'eggs'
-            : 'egg'
+        const eggsType = amount === 1
+            ? 'egg'
+            : 'eggs'
 
         ingredients.push([amount, eggsType]);
     }
 
     const additivesGen = () => {
-        for (let i = 0; i < 5; i++) {
-            const additiveIndex = Math.floor(Math.random() * additives.length)
+        // Set a local variable because we mutate this below
+        // and we need it fresh again for the resetCookie function
+        let freshAdditives = [...additives]
 
-            let additiveType = additives[additiveIndex];
-            additives.splice(additiveIndex, 1); //remove from the list to avoid repeats
+        for (let i = 0; i < 5; i++) {
+            const additiveIndex = Math.floor(Math.random() * freshAdditives.length)
+
+            let additiveType = freshAdditives[additiveIndex];
+            freshAdditives.splice(additiveIndex, 1); // remove from the list to avoid repeats
 
             let measurement = measurements[Math.floor(Math.random() * measurements.length)];
 
@@ -102,8 +120,13 @@ const cookieGen = () => {
     }
 }
 
+const resetCookie = () => {
+    const table = document.getElementById('recipe')
+    table.innerHTML = initialTableHTML
+    cookieGen()
+}
 
-cookieGen();
+cookieGen()
 
-document.getElementById('init').addEventListener('click', () => location.reload());
-document.getElementById('init').style.display = 'inline-block';
+document.getElementById('init').addEventListener('click', () => resetCookie())
+document.getElementById('init').style.display = 'inline-block'
